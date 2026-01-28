@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-tpzqxw&&@03wq2yzgf!gzh6u2=044s2j+_!#jioe(#f^6%quzo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
     SECURE_SSL_REDIRECT = False
@@ -33,9 +33,12 @@ else:
     SECURE_SSL_REDIRECT = True
     CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
 
 
-ALLOWED_HOSTS = ["softstarter.ieng.tech", ".ieng.tech","*"]
+ALLOWED_HOSTS = ["softstarter.ieng.tech", "ieng.tech"]
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 CSRF_TRUSTED_ORIGINS = ["https://*.ieng.tech"]
@@ -88,8 +91,12 @@ WSGI_APPLICATION = 'cmms.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cmms_db',
+        'USER': 'postgres',
+        'PASSWORD': 'your-db-password-here',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
