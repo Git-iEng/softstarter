@@ -94,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'cmms_db',
         'USER': 'postgres',
-        'PASSWORD': 'your-db-password-here',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost',
         'PORT': '5432',
     }
