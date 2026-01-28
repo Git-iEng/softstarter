@@ -564,3 +564,336 @@ This section is important for the desktop view, as it overrides the mobile style
 @media screen and (max-width: 1118px) {
   .nav__list { background-color: var(--black-color); }
 }
+
+
+/* ===== Base ===== */
+:root{
+  --ink: #0b1220;
+  --muted: #6b7a8c;
+  --bg: #ffffff;
+
+  --teal: #0f766e;
+  --teal-dark: #155e75;
+
+  --card-border: rgba(11, 18, 32, 0.10);
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+
+  --container: 1200px;
+}
+
+.ieng-container{
+  width: min(92vw, var(--container));
+  margin-inline: auto;
+}
+
+/* ===== Sections 1 & 2 ===== */
+.ieng-info-section{
+  background: var(--bg);
+  padding: 28px 0;
+}
+
+.ieng-mini-title{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.ieng-mini-line{
+  width: 34px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-dark));
+}
+
+.ieng-info-text{
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 1050px;
+}
+
+/* ===== Locations ===== */
+.ieng-locations{
+  background: var(--bg);
+  padding: 18px 0 46px;
+}
+
+.ieng-loc-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.ieng-loc-card{
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+}
+
+.ieng-loc-head{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ieng-loc-title{
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.ieng-loc-icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: #0b1220;
+}
+
+/* icon color blocks */
+.ieng-loc-card--au .ieng-loc-icon{ background: rgba(59,130,246,.25); }
+.ieng-loc-card--in .ieng-loc-icon{ background: rgba(245,158,11,.28); }
+.ieng-loc-card--fj .ieng-loc-icon{ background: rgba(16,185,129,.25); }
+
+.ieng-loc-row{
+  margin: 10px 0 0;
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.ieng-loc-row a{
+  color: var(--teal-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color .3s ease, opacity .3s ease;
+}
+
+.ieng-loc-row a:hover{
+  color: var(--teal);
+  opacity: 0.85;
+}
+
+.ieng-loc-address{
+  margin: 12px 0 16px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* button */
+.ieng-loc-btn{
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--teal-dark);
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.ieng-loc-btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 980px){
+  .ieng-loc-grid{ grid-template-columns: 1fr; }
+  .ieng-loc-card{ min-height: auto; }
+}
+
+
+/* ===== HERO IMAGE: fix mobile cropping + make desktop a bit larger ===== */
+
+/* Make the hero media/card slightly bigger on web */
+.bo-hero-media { width: 100%; }
+.bo-hero-card  { width: 100%; max-width: 720px; margin-left: auto; }
+
+/* Control the image box */
+.bo-hero-image-wrap{
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f3f6fb;            /* shows behind image if contain adds letterbox */
+  aspect-ratio: 16 / 9;            /* consistent look on desktop */
+}
+
+/* Default (desktop/web): fill nicely */
+.bo-hero-image-wrap img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;               /* nice look on desktop */
+  object-position: center;
+}
+
+/* MOBILE: show FULL image (no cropping) */
+@media (max-width: 768px){
+  .bo-hero-card { max-width: 520px; margin-inline: auto; }
+
+  .bo-hero-image-wrap{
+    aspect-ratio: 4 / 3;           /* a bit taller on mobile */
+  }
+
+  .bo-hero-image-wrap img{
+    object-fit: contain;           /* IMPORTANT: stops cropping */
+  }
+}
+
+/* ===== HERO IMAGE: STOP CROPPING (MOBILE + WEB) ===== */
+
+/* Let the wrapper size naturally (no forced height/ratio) */
+.bo-hero-image-wrap{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #f3f6fb;   /* shows if image doesn't fill */
+}
+
+/* Show full image (no crop) */
+.bo-hero-image-wrap img{
+  display: block;
+  width: 100%;
+  height: auto;          /* IMPORTANT */
+  object-fit: contain;   /* safety if any height is applied elsewhere */
+  object-position: center;
+}
+
+/* Slightly bigger hero card on web */
+@media (min-width: 1024px){
+  .bo-hero-card{
+    max-width: 860px;    /* increase size */
+    margin-left: auto;
+  }
+}
+
+
+/* ===== FIX GAP BETWEEN FIXED HEADER AND HERO ===== */
+:root { --header-offset: 3.5rem; }          /* mobile header height */
+@media (min-width: 1118px){
+  :root { --header-offset: 5.5rem; }        /* desktop header height (3.5rem + 2rem) */
+}
+
+/* Remove any extra spacing added elsewhere */
+.bo-hero{
+  margin-top: 0 !important;
+  padding-top: calc(var(--header-offset) + 10px) !important; /* small breathing space */
+}/* =========================================================
+   FIX: header gap + responsive hero/overview images
+   (paste at END of your CSS so it overrides everything)
+========================================================= */
+
+/* 1) Correct offset for your fixed header (mobile + desktop) */
+:root{
+  --header-offset: var(--header-height); /* 3.5rem */
+}
+@media (min-width: 1118px){
+  :root{
+    /* your desktop nav height = header-height + 2rem */
+    --header-offset: calc(var(--header-height) + 2rem);
+  }
+}
+
+/* Remove the visible gap (usually caused by extra padding/margin on hero) */
+.bo-hero{
+  margin-top: 0 !important;
+  padding-top: calc(var(--header-offset) + 8px) !important; /* small breathing room */
+}
+
+/* If any parent adds spacing above the hero content, kill it */
+.bo-hero .bo-container,
+.bo-hero .bo-hero-inner{
+  margin-top: 0 !important;
+}
+
+/* 2) HERO IMAGE: prevent weird cropping on mobile, make a bit bigger on web */
+.bo-hero-card{
+  width: 100%;
+}
+
+.bo-hero-image-wrap{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #eef2f6;
+  aspect-ratio: 16 / 9;              /* keeps image stable in web view */
+}
+
+/* Desktop/web: slightly taller/bigger feel */
+@media (min-width: 1118px){
+  .bo-hero-image-wrap{
+    aspect-ratio: 15 / 8;            /* a touch taller than 16:9 */
+  }
+}
+
+.bo-hero-image-wrap img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;                 /* web view looks clean */
+  object-position: center;
+}
+
+/* Mobile: show full image (no aggressive crop) */
+@media (max-width: 640px){
+  .bo-hero-image-wrap{
+    aspect-ratio: 4 / 3;             /* gives more height so it doesn’t feel cropped */
+  }
+  .bo-hero-image-wrap img{
+    object-fit: contain;             /* prevents cutting the boiler image */
+    background: #eef2f6;             /* keeps it nice if there are side gaps */
+  }
+}
+
+/* 3) OVERVIEW (“What we provide”) image: center align + increase size */
+.bo-overview-grid{
+  align-items: center !important;     /* vertical centering with the left text */
+}
+
+.bo-overview-media{
+  display: flex;
+  align-items: center;
+  justify-content: center;            /* keeps it centered in its column */
+}
+
+.bo-overview-image-wrap{
+  width: min(560px, 100%);            /* increases size but stays responsive */
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 18px;
+  margin: 0;
+}
+
+.bo-overview-image-wrap img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Mobile stacking safety */
+@media (max-width: 980px){
+  .bo-overview-image-wrap{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
