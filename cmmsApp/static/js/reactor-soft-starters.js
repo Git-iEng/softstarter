@@ -8,7 +8,7 @@
 
 (function () {
   // Reveal
-  const els = document.querySelectorAll(".bo-reveal");
+  const els = document.querySelectorAll(".softstarter-reveal");
   if (!els.length) return;
 
   if (!("IntersectionObserver" in window)) {
@@ -29,8 +29,8 @@
   }
 
   // Mission/Vision/Values tabs
-  const mvvTabs = document.querySelectorAll(".bo-mvv-tab");
-  const mvvPanels = document.querySelectorAll(".bo-mvv-content");
+  const mvvTabs = document.querySelectorAll(".softstarter-mvv-tab");
+  const mvvPanels = document.querySelectorAll(".softstarter-mvv-content");
   if (mvvTabs.length && mvvPanels.length) {
     mvvTabs.forEach((tab) => {
       tab.addEventListener("click", () => {
@@ -45,8 +45,8 @@
   }
 
   // Specs tabs (LV/MV)
-  const specTabs = document.querySelectorAll(".rbs-spec-tab");
-  const specPanels = document.querySelectorAll(".rbs-spec-panel");
+  const specTabs = document.querySelectorAll(".softstarter-spec-tab");
+  const specPanels = document.querySelectorAll(".softstarter-spec-panel");
   if (specTabs.length && specPanels.length) {
     specTabs.forEach((tab) => {
       tab.addEventListener("click", () => {
@@ -68,27 +68,27 @@
   }
 
   // FAQ accordion
-  const faqBtns = document.querySelectorAll(".rbs-faq-q");
+  const faqBtns = document.querySelectorAll(".softstarter-faq-q");
   faqBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      const item = btn.closest(".rbs-faq-item");
-      const ans = item.querySelector(".rbs-faq-a");
+      const item = btn.closest(".softstarter-faq-item");
+      const ans = item.querySelector(".softstarter-faq-a");
       const expanded = btn.getAttribute("aria-expanded") === "true";
 
       // close others (optional)
       faqBtns.forEach((b) => {
         if (b !== btn) {
           b.setAttribute("aria-expanded", "false");
-          const i = b.closest(".rbs-faq-item");
-          const a = i.querySelector(".rbs-faq-a");
+          const i = b.closest(".softstarter-faq-item");
+          const a = i.querySelector(".softstarter-faq-a");
           a.hidden = true;
-          i.querySelector(".rbs-faq-ico").textContent = "+";
+          i.querySelector(".softstarter-faq-ico").textContent = "+";
         }
       });
 
       btn.setAttribute("aria-expanded", expanded ? "false" : "true");
       ans.hidden = expanded;
-      item.querySelector(".rbs-faq-ico").textContent = expanded ? "+" : "–";
+      item.querySelector(".softstarter-faq-ico").textContent = expanded ? "+" : "–";
     });
   });
 })();

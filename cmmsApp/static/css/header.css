@@ -724,11 +724,11 @@ This section is important for the desktop view, as it overrides the mobile style
 /* ===== HERO IMAGE: fix mobile cropping + make desktop a bit larger ===== */
 
 /* Make the hero media/card slightly bigger on web */
-.bo-hero-media { width: 100%; }
-.bo-hero-card  { width: 100%; max-width: 720px; margin-left: auto; }
+.softstarter-hero-media { width: 100%; }
+.softstarter-hero-card  { width: 100%; max-width: 720px; margin-left: auto; }
 
 /* Control the image box */
-.bo-hero-image-wrap{
+.softstarter-hero-image-wrap{
   position: relative;
   overflow: hidden;
   border-radius: 10px;
@@ -737,7 +737,7 @@ This section is important for the desktop view, as it overrides the mobile style
 }
 
 /* Default (desktop/web): fill nicely */
-.bo-hero-image-wrap img{
+.softstarter-hero-image-wrap img{
   display: block;
   width: 100%;
   height: 100%;
@@ -747,13 +747,13 @@ This section is important for the desktop view, as it overrides the mobile style
 
 /* MOBILE: show FULL image (no cropping) */
 @media (max-width: 768px){
-  .bo-hero-card { max-width: 520px; margin-inline: auto; }
+  .softstarter-hero-card { max-width: 520px; margin-inline: auto; }
 
-  .bo-hero-image-wrap{
+  .softstarter-hero-image-wrap{
     aspect-ratio: 4 / 3;           /* a bit taller on mobile */
   }
 
-  .bo-hero-image-wrap img{
+  .softstarter-hero-image-wrap img{
     object-fit: contain;           /* IMPORTANT: stops cropping */
   }
 }
@@ -761,7 +761,7 @@ This section is important for the desktop view, as it overrides the mobile style
 /* ===== HERO IMAGE: STOP CROPPING (MOBILE + WEB) ===== */
 
 /* Let the wrapper size naturally (no forced height/ratio) */
-.bo-hero-image-wrap{
+.softstarter-hero-image-wrap{
   position: relative;
   overflow: hidden;
   border-radius: 18px;
@@ -769,7 +769,7 @@ This section is important for the desktop view, as it overrides the mobile style
 }
 
 /* Show full image (no crop) */
-.bo-hero-image-wrap img{
+.softstarter-hero-image-wrap img{
   display: block;
   width: 100%;
   height: auto;          /* IMPORTANT */
@@ -779,7 +779,7 @@ This section is important for the desktop view, as it overrides the mobile style
 
 /* Slightly bigger hero card on web */
 @media (min-width: 1024px){
-  .bo-hero-card{
+  .softstarter-hero-card{
     max-width: 860px;    /* increase size */
     margin-left: auto;
   }
@@ -793,7 +793,7 @@ This section is important for the desktop view, as it overrides the mobile style
 }
 
 /* Remove any extra spacing added elsewhere */
-.bo-hero{
+.softstarter-hero{
   margin-top: 0 !important;
   padding-top: calc(var(--header-offset) + 10px) !important; /* small breathing space */
 }/* =========================================================
@@ -813,23 +813,23 @@ This section is important for the desktop view, as it overrides the mobile style
 }
 
 /* Remove the visible gap (usually caused by extra padding/margin on hero) */
-.bo-hero{
+.softstarter-hero{
   margin-top: 0 !important;
   padding-top: calc(var(--header-offset) + 8px) !important; /* small breathing room */
 }
 
 /* If any parent adds spacing above the hero content, kill it */
-.bo-hero .bo-container,
-.bo-hero .bo-hero-inner{
+.softstarter-hero .softstarter-container,
+.softstarter-hero .softstarter-hero-inner{
   margin-top: 0 !important;
 }
 
 /* 2) HERO IMAGE: prevent weird cropping on mobile, make a bit bigger on web */
-.bo-hero-card{
+.softstarter-hero-card{
   width: 100%;
 }
 
-.bo-hero-image-wrap{
+.softstarter-hero-image-wrap{
   position: relative;
   overflow: hidden;
   border-radius: 18px;
@@ -839,12 +839,12 @@ This section is important for the desktop view, as it overrides the mobile style
 
 /* Desktop/web: slightly taller/bigger feel */
 @media (min-width: 1118px){
-  .bo-hero-image-wrap{
+  .softstarter-hero-image-wrap{
     aspect-ratio: 15 / 8;            /* a touch taller than 16:9 */
   }
 }
 
-.bo-hero-image-wrap img{
+.softstarter-hero-image-wrap img{
   width: 100%;
   height: 100%;
   display: block;
@@ -854,27 +854,27 @@ This section is important for the desktop view, as it overrides the mobile style
 
 /* Mobile: show full image (no aggressive crop) */
 @media (max-width: 640px){
-  .bo-hero-image-wrap{
+  .softstarter-hero-image-wrap{
     aspect-ratio: 4 / 3;             /* gives more height so it doesn’t feel cropped */
   }
-  .bo-hero-image-wrap img{
+  .softstarter-hero-image-wrap img{
     object-fit: contain;             /* prevents cutting the boiler image */
     background: #eef2f6;             /* keeps it nice if there are side gaps */
   }
 }
 
 /* 3) OVERVIEW (“What we provide”) image: center align + increase size */
-.bo-overview-grid{
+.softstarter-overview-grid{
   align-items: center !important;     /* vertical centering with the left text */
 }
 
-.bo-overview-media{
+.softstarter-overview-media{
   display: flex;
   align-items: center;
   justify-content: center;            /* keeps it centered in its column */
 }
 
-.bo-overview-image-wrap{
+.softstarter-overview-image-wrap{
   width: min(560px, 100%);            /* increases size but stays responsive */
   aspect-ratio: 16 / 10;
   overflow: hidden;
@@ -882,7 +882,7 @@ This section is important for the desktop view, as it overrides the mobile style
   margin: 0;
 }
 
-.bo-overview-image-wrap img{
+.softstarter-overview-image-wrap img{
   width: 100%;
   height: 100%;
   display: block;
@@ -892,7 +892,7 @@ This section is important for the desktop view, as it overrides the mobile style
 
 /* Mobile stacking safety */
 @media (max-width: 980px){
-  .bo-overview-image-wrap{
+  .softstarter-overview-image-wrap{
     width: 100%;
     aspect-ratio: 16 / 9;
   }

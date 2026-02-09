@@ -3,22 +3,22 @@
    Keep your existing design; this only adds new section styles
 ========================================================= */
 
-.rbs-hero .bo-hero-kicker span{
+.softstarter-hero .softstarter-hero-kicker span{
   letter-spacing: .2px;
 }
 
 /* Pain points pills */
-.rbs-mini-title{
+.softstarter-mini-title{
   margin: 18px 0 12px;
   font-size: 16px;
   font-weight: 900;
 }
-.rbs-pain-grid{
+.softstarter-pain-grid{
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
-.rbs-pill{
+.softstarter-pill{
   padding: 10px 12px;
   border-radius: 999px;
   border: 1px solid rgba(11,18,32,.12);
@@ -28,44 +28,44 @@
 }
 
 /* Section head helper */
-.rbs-section-head{
+.softstarter-section-head{
   margin-bottom: 18px;
 }
 
 /* Comparison section */
-.rbs-compare{
+.softstarter-compare{
   background: #ffffff;
   padding: clamp(40px, 4vw, 70px) 0;
 }
-.rbs-table-wrap{
+.softstarter-table-wrap{
   overflow-x: auto;
   border: 1px solid rgba(11,18,32,.12);
   border-radius: 18px;
   box-shadow: 0 10px 30px rgba(0,0,0,.06);
   background: #fff;
 }
-.rbs-table{
+.softstarter-table{
   width: 100%;
   border-collapse: collapse;
   min-width: 840px;
 }
-.rbs-table thead th{
+.softstarter-table thead th{
   text-align: left;
   padding: 14px 16px;
   background: rgba(11,18,32,.04);
   border-bottom: 1px solid rgba(11,18,32,.10);
   font-weight: 900;
 }
-.rbs-table tbody td{
+.softstarter-table tbody td{
   padding: 14px 16px;
   border-bottom: 1px solid rgba(11,18,32,.08);
   vertical-align: top;
   color: #0b1220;
 }
-.rbs-table tbody tr:last-child td{
+.softstarter-table tbody tr:last-child td{
   border-bottom: 0;
 }
-.rbs-compare-cta{
+.softstarter-compare-cta{
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
@@ -73,11 +73,11 @@
 }
 
 /* Specs tabs */
-.rbs-specs{
+.softstarter-specs{
   background: #ffffff;
   padding: clamp(40px, 4vw, 70px) 0;
 }
-.rbs-spec-tabs{
+.softstarter-spec-tabs{
   display: inline-flex;
   gap: 10px;
   padding: 8px;
@@ -86,7 +86,7 @@
   background: rgba(11,18,32,.03);
   margin: 10px 0 18px;
 }
-.rbs-spec-tab{
+.softstarter-spec-tab{
   border: 0;
   background: transparent;
   padding: 10px 14px;
@@ -95,65 +95,65 @@
   cursor: pointer;
   color: #0b1220;
 }
-.rbs-spec-tab.is-active{
+.softstarter-spec-tab.is-active{
   background: #0b1220;
   color: #fff;
 }
-.rbs-spec-panel{ display: none; }
-.rbs-spec-panel.is-active{ display: block; }
+.softstarter-spec-panel{ display: none; }
+.softstarter-spec-panel.is-active{ display: block; }
 
-.rbs-spec-grid{
+.softstarter-spec-grid{
   display: grid;
   grid-template-columns: 1.15fr .85fr;
   gap: 18px;
   align-items: start;
 }
-.rbs-spec-card{
+.softstarter-spec-card{
   border: 1px solid rgba(11,18,32,.12);
   border-radius: 18px;
   padding: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,.06);
   background: #fff;
 }
-.rbs-spec-title{
+.softstarter-spec-title{
   margin: 0 0 10px;
   font-size: 18px;
   font-weight: 950;
 }
-.rbs-kv{
+.softstarter-kv{
   width: 100%;
   border-collapse: collapse;
 }
-.rbs-kv td{
+.softstarter-kv td{
   padding: 10px 8px;
   border-bottom: 1px solid rgba(11,18,32,.08);
 }
-.rbs-kv tr:last-child td{ border-bottom: 0; }
-.rbs-kv td:first-child{
+.softstarter-kv tr:last-child td{ border-bottom: 0; }
+.softstarter-kv td:first-child{
   width: 44%;
   color: rgba(11,18,32,.75);
   font-weight: 800;
 }
-.rbs-kv td:last-child{
+.softstarter-kv td:last-child{
   font-weight: 700;
 }
 
-.rbs-spec-aside{
+.softstarter-spec-aside{
   display: grid;
   gap: 12px;
 }
-.rbs-highlight{
+.softstarter-highlight{
   border: 1px solid rgba(11,18,32,.12);
   border-radius: 18px;
   padding: 14px 14px 10px;
   background: rgba(15,118,110,.05);
 }
-.rbs-highlight h4{
+.softstarter-highlight h4{
   margin: 0 0 10px;
   font-size: 15px;
   font-weight: 950;
 }
-.rbs-highlight ul{
+.softstarter-highlight ul{
   margin: 0;
   padding-left: 18px;
   color: rgba(11,18,32,.85);
@@ -162,28 +162,28 @@
 }
 
 /* Features */
-.rbs-features{
+.softstarter-features{
   background: #ffffff;
   padding: clamp(40px, 4vw, 70px) 0;
 }
-.rbs-feature-grid{
+.softstarter-feature-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
-.rbs-feature-card{
+.softstarter-feature-card{
   border: 1px solid rgba(11,18,32,.12);
   border-radius: 18px;
   padding: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,.06);
   background: #fff;
 }
-.rbs-feature-card h3{
+.softstarter-feature-card h3{
   margin: 0 0 8px;
   font-size: 16px;
   font-weight: 950;
 }
-.rbs-feature-card p{
+.softstarter-feature-card p{
   margin: 0;
   color: rgba(11,18,32,.72);
   line-height: 1.7;
@@ -191,28 +191,28 @@
 }
 
 /* Case studies */
-.rbs-cases{
+.softstarter-cases{
   background: #ffffff;
   padding: clamp(40px, 4vw, 70px) 0;
 }
-.rbs-case-grid{
+.softstarter-case-grid{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
-.rbs-case-card{
+.softstarter-case-card{
   border: 1px solid rgba(11,18,32,.12);
   border-radius: 18px;
   padding: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,.06);
   background: #fff;
 }
-.rbs-case-card h3{
+.softstarter-case-card h3{
   margin: 0 0 10px;
   font-size: 16px;
   font-weight: 950;
 }
-.rbs-case-card ul{
+.softstarter-case-card ul{
   margin: 0;
   padding-left: 22px;
   line-height: 1.7;
@@ -221,10 +221,10 @@
   list-style: disc;
 }
 
-.rbs-case-card li{
+.softstarter-case-card li{
   margin-bottom: 6px;
 }
-.rbs-cases-cta{
+.softstarter-cases-cta{
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
@@ -232,23 +232,23 @@
 }
 
 /* FAQ */
-.rbs-faq{
+.softstarter-faq{
   background: #ffffff;
   padding: clamp(40px, 4vw, 70px) 0;
 }
-.rbs-faq-list{
+.softstarter-faq-list{
   display: grid;
   gap: 12px;
   max-width: 980px;
 }
-.rbs-faq-item{
+.softstarter-faq-item{
   border: 1px solid rgba(11,18,32,.12);
   border-radius: 16px;
   background: #fff;
   box-shadow: 0 10px 30px rgba(0,0,0,.05);
   overflow: hidden;
 }
-.rbs-faq-q{
+.softstarter-faq-q{
   width: 100%;
   text-align: left;
   padding: 14px 16px;
@@ -261,7 +261,7 @@
   justify-content: space-between;
   gap: 12px;
 }
-.rbs-faq-ico{
+.softstarter-faq-ico{
   width: 32px;
   height: 32px;
   display: grid;
@@ -270,7 +270,7 @@
   border: 1px solid rgba(11,18,32,.14);
   font-weight: 950;
 }
-.rbs-faq-a{
+.softstarter-faq-a{
   padding: 0 16px 14px;
   color: rgba(11,18,32,.75);
   line-height: 1.75;
@@ -279,11 +279,11 @@
 
 /* Responsive */
 @media (max-width: 1024px){
-  .rbs-feature-grid{ grid-template-columns: 1fr 1fr; }
-  .rbs-case-grid{ grid-template-columns: 1fr 1fr; }
-  .rbs-spec-grid{ grid-template-columns: 1fr; }
+  .softstarter-feature-grid{ grid-template-columns: 1fr 1fr; }
+  .softstarter-case-grid{ grid-template-columns: 1fr 1fr; }
+  .softstarter-spec-grid{ grid-template-columns: 1fr; }
 }
 @media (max-width: 640px){
-  .rbs-feature-grid{ grid-template-columns: 1fr; }
-  .rbs-case-grid{ grid-template-columns: 1fr; }
+  .softstarter-feature-grid{ grid-template-columns: 1fr; }
+  .softstarter-case-grid{ grid-template-columns: 1fr; }
 }

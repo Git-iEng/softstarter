@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-tpzqxw&&@03wq2yzgf!gzh6u2=044s2j+_!#jioe(#f^6%quzo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True  # keep false on server, true locally if needed
 
 if DEBUG:
     SECURE_SSL_REDIRECT = False
@@ -33,15 +33,15 @@ else:
     SECURE_SSL_REDIRECT = True
     CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SECURE = True
-    SECURE_HSTS_SECONDS = 31536000
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-    SECURE_HSTS_PRELOAD = True
 
 
-ALLOWED_HOSTS = ["softstarter.ieng.tech", "ieng.tech"]
+ALLOWED_HOSTS = ["generators.ieng.tech", ".ieng.tech"]
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
+
 CSRF_TRUSTED_ORIGINS = ["https://*.ieng.tech"]
+
+
 
 # Application definition
 
@@ -56,8 +56,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-   "django.middleware.security.SecurityMiddleware",
+    "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -91,12 +92,8 @@ WSGI_APPLICATION = 'cmms.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cmms_db',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -147,7 +144,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Where to store the Excel (optional)
-
+# CONTACT_SUBMISSIONS_XLSX = BASE_DIR / "contact_submissions.xlsx"
 
 # Email (configure to your provider)
 
@@ -161,9 +158,11 @@ EMAIL_HOST_PASSWORD = 'test@iEng'  # Your email password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 CONTACT_RECIPIENTS = [
     "shila@iengaust.com.au",
+   "test@ieng.tech",
    "enquiries@iengaust.com.au",
 ]
-CONTACT_RECIPIENTS = ["shila@iengaust.com.au","enquiries@iengaust.com.au"]
+CONTACT_RECIPIENTS = [  
+"shila@iengaust.com.au","test@ieng.tech","enquiries@iengaust.com.au"]
 DEMO_RECIPIENTS = CONTACT_RECIPIENTS
 
 # CONTACT_EMAIL = 'diksha@iengaust.com.au'
@@ -175,3 +174,4 @@ EMAIL_TIMEOUT = 15
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
